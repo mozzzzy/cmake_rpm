@@ -7,7 +7,10 @@ URL:     http://www.cmake.org
 Source0: CMake.tar.gz
 
 BuildRequires:  make
+BuildRequires:  openssl-devel
 
+# Avoid "No build ID note found" error
+%undefine _missing_build_ids_terminate_build
 
 %description
 CMake is used to control the software compilation process using simple
@@ -19,7 +22,7 @@ generation, code generation, and template instantiation.
 
 
 %prep
-%setup -q
+%setup -q -n CMake
 
 
 %build
